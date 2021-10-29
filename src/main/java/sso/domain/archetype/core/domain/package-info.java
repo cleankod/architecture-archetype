@@ -10,4 +10,4 @@
  * - Username
  * - ... etc
  */
-package sso.domain.auth.core.domain;
+package sso.domain.archetype.core.domain;

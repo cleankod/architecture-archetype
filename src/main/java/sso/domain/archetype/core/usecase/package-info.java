@@ -13,4 +13,4 @@
  * -- FindLastAuthenticationAttemptsUseCase
  * - ReauthenticateSessionUseCase
  */
-package sso.domain.auth.core.usecase;
+package sso.domain.archetype.core.usecase;

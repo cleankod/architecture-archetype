@@ -8,4 +8,4 @@
  * - AuthenticationResponse
  *
  */
-package sso.domain.auth.provider.model;
+package sso.domain.archetype.provider.model;
