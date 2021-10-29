@@ -1,6 +1,7 @@
 package sso.domain.facebook.provider;
 
 import java.util.Map;
+import java.util.Optional;
 
 import sso.domain.authentication.core.domain.AuthenticationFailedReason;
 import sso.domain.facebook.core.domain.FacebookId;
@@ -18,10 +19,11 @@ public class FacebookAuthenticationWebService implements FacebookAuthenticationS
 
   @Override
   public Result<FacebookName, AuthenticationFailedReason> authenticate(final FacebookId facebookId, final FacebookToken facebookToken) {
-    FacebookDatabaseEntry facebookDatabaseEntry = USER_DATABASE.get(facebookId.value());
-    if (facebookDatabaseEntry.getToken().equals(facebookToken.value())) {
-      return Result.successful(FacebookName.of(facebookDatabaseEntry.getName()));
-    }
-    return Result.fail(AuthenticationFailedReason.BAD_CREDENTIALS);
+    return Optional.ofNullable(USER_DATABASE.get(facebookId.value()))
+        .filter(facebookDatabaseEntry -> facebookDatabaseEntry.getToken().equals(facebookToken.value()))
+        .map(facebookDatabaseEntry ->
+            Result.<FacebookName, AuthenticationFailedReason>successful(FacebookName.of(facebookDatabaseEntry.getName()))
+        )
+        .orElseGet(() -> Result.fail(AuthenticationFailedReason.BAD_CREDENTIALS));
   }
 }
