@@ -4,6 +4,7 @@ package sso.domain.authentication.entrypoint
 import sso.BaseRestSpec
 import sso.domain.authentication.core.domain.Authentication
 import sso.domain.authentication.core.domain.AuthenticationFailedReason
+import sso.domain.facebook.entrypoint.AuthenticateWithFacebookController
 import sso.domain.user.core.domain.Username
 
 class AuthenticateWithFacebookSpec extends BaseRestSpec {

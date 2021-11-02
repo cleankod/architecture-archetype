@@ -1,4 +1,4 @@
-package sso.domain.authentication.core.usecase;
+package sso.domain.facebook.core.usecase;
 
 import lombok.RequiredArgsConstructor;
 import sso.domain.authentication.core.domain.Authentication;
