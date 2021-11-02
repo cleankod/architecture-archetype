@@ -6,6 +6,8 @@ import lombok.Getter;
 import spark.servlet.SparkApplication;
 import sso.domain.authentication.config.AuthenticationDomainConfiguration;
 import sso.domain.authentication.entrypoint.AuthenticateWithFacebookController;
+import sso.domain.authentication.entrypoint.AuthenticateWithUsernameAndPasswordController;
+import sso.domain.user.config.UserDomainConfiguration;
 
 @Getter
 public class Application implements SparkApplication {
@@ -22,9 +24,11 @@ public class Application implements SparkApplication {
 
     ContextHolder() {
       Feather feather = Feather.with(
-          new AuthenticationDomainConfiguration()
+          new AuthenticationDomainConfiguration(),
+          new UserDomainConfiguration()
       );
       feather.instance(AuthenticateWithFacebookController.class);
+      feather.instance(AuthenticateWithUsernameAndPasswordController.class);
     }
   }
 }
