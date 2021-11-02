@@ -1,4 +1,4 @@
-package sso.domain.authentication.entrypoint;
+package sso.domain.facebook.entrypoint;
 
 import static spark.Spark.post;
 
@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import spark.Request;
 import spark.Response;
-import sso.domain.authentication.core.usecase.AuthenticateWithFacebookUseCase;
+import sso.domain.facebook.core.usecase.AuthenticateWithFacebookUseCase;
 import sso.domain.facebook.core.domain.FacebookId;
 import sso.domain.facebook.core.domain.FacebookToken;
 import sso.util.JsonTransformer;
