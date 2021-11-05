@@ -19,7 +19,7 @@ public class AuthenticateWithFacebookUseCase {
     return authenticationService.authenticate(facebookId, facebookToken)
         .successMap(facebookName ->
             Authentication.builder()
-                .token(Token.of("sss")) // TODO: Generate token
+                .token(Token.generate())
                 .user(
                     User.builder()
                         .username(Username.of(facebookName.value()))
