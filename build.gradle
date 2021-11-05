@@ -1,10 +1,11 @@
 plugins {
     id 'java'
     id 'groovy'
+    id 'pl.allegro.tech.build.axion-release' version '1.13.6'
 }
 
 group 'org.example'
-version '1.0-SNAPSHOT'
+project.version = scmVersion.version
 
 repositories {
     mavenCentral()
