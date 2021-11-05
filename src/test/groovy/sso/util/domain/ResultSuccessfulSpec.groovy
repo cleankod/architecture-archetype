@@ -32,7 +32,8 @@ class ResultSuccessfulSpec extends Specification {
     result.successfulValue()
 
     then:
-    thrown(NullPointerException)
+    def exception = thrown(NullPointerException)
+    exception.message == "The success value cannot be null."
   }
 
   def "should throw exception when result value is null"() {
@@ -40,6 +41,7 @@ class ResultSuccessfulSpec extends Specification {
     Result.successful(null)
 
     then:
-    thrown(NullPointerException)
+    def exception = thrown(NullPointerException)
+    exception.message == "The success value cannot be null."
   }
 }
