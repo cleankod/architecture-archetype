@@ -32,7 +32,8 @@ class ResultFailSpec extends Specification {
     result.failValue()
 
     then:
-    thrown(NullPointerException)
+    def exception = thrown(NullPointerException)
+    exception.message == "The fail value cannot be null."
   }
 
   def "should throw exception when result value is null"() {
@@ -40,6 +41,7 @@ class ResultFailSpec extends Specification {
     Result.fail(null)
 
     then:
-    thrown(NullPointerException)
+    def exception = thrown(NullPointerException)
+    exception.message == "The fail value cannot be null."
   }
 }

@@ -11,6 +11,8 @@ import lombok.EqualsAndHashCode;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @EqualsAndHashCode
 public final class Result<S, F> {
+  private static final String FAIL_VALUE_CANNOT_BE_NULL = "The fail value cannot be null.";
+  private static final String SUCCESS_VALUE_CANNOT_BE_NULL = "The success value cannot be null.";
   private final S successfulValue;
   private final F failValue;
   private final boolean successful;
@@ -20,7 +22,7 @@ public final class Result<S, F> {
   }
 
   public static <S, F> Result<S, F> successful(S value) {
-    return new Result<>(Objects.requireNonNull(value), null, true);
+    return new Result<>(Objects.requireNonNull(value, SUCCESS_VALUE_CANNOT_BE_NULL), null, true);
   }
 
   public static <S, F> Result<S, F> fail() {
@@ -28,7 +30,7 @@ public final class Result<S, F> {
   }
 
   public static <S, F> Result<S, F> fail(F value) {
-    return new Result<>(null, Objects.requireNonNull(value), false);
+    return new Result<>(null, Objects.requireNonNull(value, FAIL_VALUE_CANNOT_BE_NULL), false);
   }
 
   public boolean isSuccessful() {
@@ -40,11 +42,11 @@ public final class Result<S, F> {
   }
 
   public S successfulValue() {
-    return Objects.requireNonNull(successfulValue);
+    return Objects.requireNonNull(successfulValue, SUCCESS_VALUE_CANNOT_BE_NULL);
   }
 
   public F failValue() {
-    return Objects.requireNonNull(failValue);
+    return Objects.requireNonNull(failValue, FAIL_VALUE_CANNOT_BE_NULL);
   }
 
   public <X> Result<S, X> failMap(Function<F, X> failureMapper) {
