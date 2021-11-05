@@ -7,14 +7,14 @@ import org.codejargon.feather.Provides;
 import sso.domain.authentication.core.usecase.AuthenticateWithFacebookUseCase;
 import sso.domain.authentication.entrypoint.AuthenticateWithFacebookController;
 import sso.domain.facebook.core.gateway.FacebookAuthenticationService;
-import sso.domain.facebook.provider.FacebookAuthenticationWebService;
+import sso.domain.facebook.provider.FacebookAuthenticationStubService;
 
 public class AuthenticationDomainConfiguration {
 
   @Provides
   @Singleton
   public FacebookAuthenticationService facebookAuthenticationService() {
-    return new FacebookAuthenticationWebService();
+    return new FacebookAuthenticationStubService();
   }
 
   @Provides
