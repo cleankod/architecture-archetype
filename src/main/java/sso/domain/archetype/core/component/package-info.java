@@ -14,4 +14,4 @@
  * - UsernameAndPasswordFailedAuthenticationHandler
  * - ... etc
  */
-package sso.domain.auth.core.component;
+package sso.domain.archetype.core.component;

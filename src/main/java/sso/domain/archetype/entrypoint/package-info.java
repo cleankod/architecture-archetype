@@ -9,4 +9,4 @@
  * -- IpResolver - a package scoped class helping other controllers resolve an IP address.
  *
  */
-package sso.domain.auth.entrypoint;
+package sso.domain.archetype.entrypoint;

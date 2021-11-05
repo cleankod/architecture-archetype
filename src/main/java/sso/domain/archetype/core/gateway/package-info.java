@@ -7,4 +7,4 @@
  * AuthenticationLockService
  * AuthenticationSettingsRepository
  */
-package sso.domain.auth.core.gateway;
+package sso.domain.archetype.core.gateway;

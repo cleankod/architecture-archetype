@@ -9,4 +9,4 @@
  * - AuthenticationLockDatabaseService
  * - AuthenticationSettingsRestRepository
  */
-package sso.domain.auth.provider;
+package sso.domain.archetype.provider;
