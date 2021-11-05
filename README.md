@@ -37,3 +37,4 @@ By using Gradle's [axion-release-plugin](https://github.com/allegro/axion-releas
 * [Gradle](https://gradle.org/) - Dependency Management and build tool
 * [Spock Framework](http://spockframework.org/) - Testing and specification framework
 * [Project Lombok](https://projectlombok.org/) - Less boilerplate code
+* [Feather](https://github.com/zsoltherpai/feather) - Ultra-lightweight dependency injection (JSR-330) library
