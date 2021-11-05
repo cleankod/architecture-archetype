@@ -4,14 +4,14 @@ package sso.domain.authentication.entrypoint
 import sso.BaseRestSpec
 import sso.domain.authentication.core.domain.Authentication
 import sso.domain.authentication.core.domain.AuthenticationFailedReason
-import sso.domain.facebook.entrypoint.AuthenticateWithFacebookController
+import sso.domain.facebook.entrypoint.AuthenticateWithFacebookController.AuthenticationRequest
 import sso.domain.user.core.domain.Username
 
 class AuthenticateWithFacebookSpec extends BaseRestSpec {
 
   def "should authenticate by facebook"() {
     given:
-    def param = new AuthenticateWithFacebookController.AuthenticationRequest(facebookId, facebookToken)
+    def param = new AuthenticationRequest(facebookId, facebookToken)
 
     when:
     def responseObject = post("/authenticate/facebook", param, Authentication.class)
@@ -28,7 +28,7 @@ class AuthenticateWithFacebookSpec extends BaseRestSpec {
 
   def "should not authenticate by facebook due to bad credentials"() {
     given:
-    def param = new AuthenticateWithFacebookController.AuthenticationRequest(facebookId, facebookToken)
+    def param = new AuthenticationRequest(facebookId, facebookToken)
 
     when:
     def response = post("/authenticate/facebook", param)

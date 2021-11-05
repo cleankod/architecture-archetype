@@ -1,11 +1,14 @@
 /**
  * Main application init classes.
  *
+ * <p>
  * Examples:
- *    ApplicationInitializer - main application init
- * 		DatasourceInitialization - all datasource initialization logic
- * 		TimeInitialization - Clock and stuff
- * 		# ... etc
- *
+ * <ul>
+ *  <li>ApplicationInitializer - main application init</li>
+ * 	<li>DatasourceInitialization - all datasource initialization logic</li>
+ * 	<li>TimeInitialization - Clock and stuff</li>
+ * 	<li>... etc</li>
+ * </ul>
+ * </p>
  */
 package sso.initialization;
